@@ -1,6 +1,6 @@
 const sanityClient = require('@sanity/client')
 const TOKEN = process.env.TOKEN;
-console.log(TOKEN);
+
 const client = sanityClient({
   projectId: '24jcy0ne',
   dataset: 'production',
