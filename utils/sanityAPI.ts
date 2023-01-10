@@ -9,6 +9,5 @@ const client = sanityClient({
   useCdn: false, // `false` if you want to ensure fresh data
 })
 
-console.log(client);
 
 export default client

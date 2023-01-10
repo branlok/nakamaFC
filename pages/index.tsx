@@ -131,7 +131,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
     name = bikes[0].name
   })
 
-  console.log(name);
+  console.log(name, 'check me');
   return {
     props: { name }, // will be passed to the page component as props
   }
