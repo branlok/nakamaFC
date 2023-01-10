@@ -125,8 +125,14 @@ export default function Home({ name }: { name: string }) {
 }
 
 export async function getStaticProps(context: GetStaticPropsContext) {
+  const query = '*[_type == "blog"]'
+  let name;
+  await client.fetch(query).then((bikes: any) => {
+    name = bikes[0].name
+  })
 
+  console.log(name);
   return {
-    props: { name: 'brandon' }, // will be passed to the page component as props
+    props: { name }, // will be passed to the page component as props
   }
 }
