@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
 import client from '../utils/sanityApi'
+import { GetStaticPropsContext } from 'next/types'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -123,7 +124,7 @@ export default function Home({ name }: { name: string }) {
   )
 }
 
-export async function getStaticProps(context) {
+export async function getStaticProps(context: GetStaticPropsContext) {
 
   return {
     props: { name: 'brandon' }, // will be passed to the page component as props
