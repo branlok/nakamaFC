@@ -7,9 +7,9 @@ export default function Navigator() {
             <nav>
                 <div className="logo">Nakama</div>
                 <div className="links">
-                    <NavItem name={"Blog"} />
-                    <NavItem name={"Content"} />
-                    <NavItem name={"About us"} />
+                    <NavItem name={"Blog"} subMenu={['FC Announcements', 'Community', 'General Awareness']} />
+                    <NavItem name={"Content"} subMenu={['Guides', 'Lore']} />
+                    <NavItem name={"About us"} subMenu={['Nakama', 'Members', 'Support']} />
                 </div>
             </nav>
         </StyledNav>

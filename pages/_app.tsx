@@ -8,7 +8,7 @@ const myFont = localFont({ src: '../utils/HandjetFlowerDouble-Medium.woff2' })
 
 const GlobalStyle = createGlobalStyle`
 
-  body, html {
+  body, html, main {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
     width: 100vw;
     font-family: ${myFont.style.fontFamily};
     /* background-color: black; */
+    font-smooth: never;
   }
   * {
     box-sizing: border-box;
@@ -25,14 +26,49 @@ const GlobalStyle = createGlobalStyle`
 
 interface ThemeInterface {
   colors: {
-    primary: string
+    "background": string,
+    "background-contrast": string,
+    "primary": string,
+    "primary-contrast": string,
+    accent: string,
+    "secondary-accent": string,
+  },
+  fontColors: {
+    "primary": string,
+    "secondary": string
+  },
+  fontSize: {
+    sm: string,
+    base: string,
+    lg: string,
+    xl: string,
+    xxl: string,
+    xxxl: string,
   }
 }
 
 const theme: ThemeInterface = {
   colors: {
-    primary: '#0070f3',
+    "background": '#141414',
+    "background-contrast": '#1D1D1D',
+    "primary": '#0A0E1B',
+    "primary-contrast": '#1C1931',
+    accent: '#FE000A',
+    "secondary-accent": '#F7931D'
+
   },
+  fontColors: {
+    primary: 'white',
+    secondary: "#D9D9D9"
+  },
+  fontSize: {
+    sm: '0.75rem', /* 12px */
+    base: '1rem',   /* 16px, base */
+    lg: '1.25rem', /* 20px */
+    xl: '1.5rem', /* 24px */
+    xxl: '1.75rem', /* 28px */
+    xxxl: '2rem'    /* 32px */
+  }
 }
 
 export default function App({ Component, pageProps }: AppProps) {

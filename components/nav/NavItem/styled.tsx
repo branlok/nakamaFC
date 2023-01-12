@@ -11,47 +11,70 @@ let StyledNavItem = styled.div`
     position: relative;
     margin-left: 5px;
     margin-right: 5px;
+    z-index: 1;
     .link-wrapper {
     height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #141414;
+    /* background-color: #141414; */
     font-weight: bold; 
-    z-index: 2;
     }
     .dropdown-menu {
     position: absolute;
-    z-index: 1;
-    width: 100%;
+    width:calc(100% + 100px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #0F0E0E;
+    background-color: black;
     color: white;
     box-shadow: 0px 0px 0px 0px black;
     border-radius: 0px 0px 5px 5px;
-    padding: 5px;
-    padding-top:30px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    &:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    padding: 10px;
+    padding-top:15px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.52);
+    z-index: 1;
+    border: 1px solid  rgba(255,255,255,0.1);
+    border-radius: 3px;
+    ::after {
+        content: "";
+        width: 20px;
+        height: 100%;
+        background-color: transparent;
+    }
+    ::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        background-color: black;
+        transform: rotate(45deg);
+        position: absolute;
+        top: -6px;
+        left: calc(50% - 5px);
+        z-index: 1;
+        border-left: 1.5px solid rgba(255,255,255,0.1);
+        border-top: 1.5px solid  rgba(255,255,255,0.1);
+        border-radius: 2px;
     }
     .wrapper {
-        border: 1px solid #392D10;
+        border: 2px solid #392D10;
         height: 100%;
         width: 100%;
         padding: 5px;
         display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 2px;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 2px;
+        
     }
+    
     .title {
         text-align: start;
+        color: ${props => props.theme.fontColors.primary};
         width: 100%;
+        padding: 5px;
+        font-size: ${props => props.theme.fontSize.base};
     }
     }
 `

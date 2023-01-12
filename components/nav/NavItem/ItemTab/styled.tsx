@@ -1,13 +1,36 @@
 import styled from 'styled-components';
 
 let StyledTab = styled.div`
-    padding: 5px;
-    color: white;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    background-color: #141414;
-    border: 1px solid rgba(255,255,255,0.2);
+
+    color: ${props => props.theme.fontColors.secondary};
+    margin-top: 2px;
+    margin-bottom: 2px;
+
+    background-color: ${props => props.theme.colors['background']};
+    border: 1px solid rgba(0,0,0,0.4);
+    text-align: center;
+    font-size: ${(props) => props.theme.fontSize.base};
     width: 100%;
+    border-radius: 2px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: 0.2s;
+    cursor: pointer;
+    :hover {
+        color: ${props => props.theme.fontColors.primary};
+        background-color: ${props => props.theme.colors['background-contrast']};
+        border-bottom: 2px solid ${props => props.theme.colors['secondary-accent']};
+        transform: translateY(-1px);
+    }
+    :active {
+        transition: 0.2s;
+        transform: translateY(0px);
+        border-bottom: 0px solid ${props => props.theme.colors['secondary-accent']};
+        background:  ${props => props.theme.colors['secondary-accent']};
+        opacity: 0.95;
+        margin-top: 4px;
+    }
+    
 `
 
 export default StyledTab;
