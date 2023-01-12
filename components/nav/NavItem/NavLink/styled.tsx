@@ -20,7 +20,7 @@ let StyledLink = styled.div<{ hovered: boolean }>`
         font-size: ${(props => props.theme.fontSize.sm)};
     }
     :hover {
-    background: linear - gradient(0deg, rgba(0, 0, 0, 0.51614583333333337) 0 %, #00000019 32 %, rgba(0, 0, 0, 0) 82 %);
+    background: linear - gradient(0deg, rgba(0, 0, 0, 0.51614583333333337) 0%, #00000019 32%, rgba(0, 0, 0, 0) 82%);
     border: 1.5px solid rgba(255, 255, 255, 0.2);
 
 }

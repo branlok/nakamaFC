@@ -16,7 +16,7 @@ export default function NavItem({ name, subMenu }: { name: string, subMenu: stri
             config: config.stiff
         }
     ), [onHover])
-        console.log(subMenu)
+    console.log(subMenu)
     return (
         <StyledNavItem onMouseEnter={() => setOnHover(true)} onMouseLeave={() => setOnHover(false)}>
             <div className="link-wrapper">
@@ -25,8 +25,8 @@ export default function NavItem({ name, subMenu }: { name: string, subMenu: stri
             {onHover && <a.div style={styles} className="dropdown-menu">
                 <div className="wrapper">
                     <div className="title">{name}</div>
-                    {subMenu.map((item) => {
-                        return <ItemTab name={item} />
+                    {subMenu.map((item, index) => {
+                        return <ItemTab key={index} name={item} />
                     })}
                 </div>
             </a.div>}
