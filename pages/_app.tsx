@@ -15,11 +15,16 @@ const GlobalStyle = createGlobalStyle`
     height: 100vh;
     width: 100vw;
     font-family: ${myFont.style.fontFamily};
-    /* background-color: black; */
-    font-smooth: never;
+    background-color: black;
+    position: relative;
   }
   * {
     box-sizing: border-box;
+  }
+  svg {
+    padding: 0px;
+    margin: 0px;
+    display: block;
   }
 `
 
@@ -53,7 +58,7 @@ const theme: ThemeInterface = {
     "background-contrast": '#1D1D1D',
     "primary": '#0A0E1B',
     "primary-contrast": '#1C1931',
-    accent: '#FE000A',
+    accent: '#D2353B',
     "secondary-accent": '#F7931D'
 
   },

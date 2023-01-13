@@ -11,8 +11,8 @@ export default function NavItem({ name, subMenu }: { name: string, subMenu: stri
 
     let [styles, api] = useSpring(() => (
         {
-            from: { top: 105, opacity: 0 },
-            to: onHover ? { top: 45, opacity: 1 } : { top: 105, opacity: 0 },
+            from: { top: 65, opacity: 0 },
+            to: onHover ? { top: 45, opacity: 1 } : { top: 65, opacity: 0 },
             config: config.stiff
         }
     ), [onHover])

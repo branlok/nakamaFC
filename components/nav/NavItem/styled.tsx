@@ -37,12 +37,6 @@ let StyledNavItem = styled.div`
     z-index: 1;
     border: 1px solid  rgba(255,255,255,0.1);
     border-radius: 3px;
-    ::after {
-        content: "";
-        width: 20px;
-        height: 100%;
-        background-color: transparent;
-    }
     ::before {
         content: "";
         width: 10px;
@@ -65,8 +59,7 @@ let StyledNavItem = styled.div`
         display: flex;
         flex-direction: column;
         align-items: center;
-        border-radius: 2px;
-        
+        border-radius: 2px;    
     }
     
     .title {

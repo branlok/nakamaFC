@@ -5,6 +5,10 @@ import { GetStaticPropsContext } from 'next/types'
 import Nav from '../components/nav'
 import LandingCover from '../components/LandingCover'
 
+import GeneralTextBlock from '../components/Blocks/GeneralTextBlock'
+import HookBlock from '../components/Blocks/HookBlock'
+import ImageBlock from '../components/Blocks/ImageBlock'
+import FooterLayout from '../components/LayoutComponents/Footer'
 
 
 export default function Home({ name }: { name: string }) {
@@ -19,6 +23,11 @@ export default function Home({ name }: { name: string }) {
       <main>
         <Nav />
         <LandingCover />
+        <HookBlock />
+        <ImageBlock />
+        <GeneralTextBlock />
+        {/* <HomeLayout /> */}
+        <FooterLayout primaryBlock={'abc'} secondaryBlock={'another one'} />
       </main>
     </>
   )
