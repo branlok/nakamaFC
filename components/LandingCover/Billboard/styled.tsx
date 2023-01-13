@@ -3,8 +3,9 @@ import { IM_Fell_Double_Pica } from '@next/font/google'
 import { a } from '@react-spring/web';
 
 const IM = IM_Fell_Double_Pica({
-    weight: '400'
+    subsets: ['latin'], weight: ['400'],  display: 'swap'
 })
+
 
 let levitate = keyframes`
 from {

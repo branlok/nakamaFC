@@ -4,7 +4,7 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import localFont from '@next/font/local'
 
 // Font files can be colocated inside of `pages`
-const myFont = localFont({ src: '../utils/HandjetFlowerDouble-Medium.woff2' })
+const myFont = localFont({ src: '../utils/HandjetFlowerDouble-Medium.woff2', display: 'swap' })
 
 const GlobalStyle = createGlobalStyle`
 

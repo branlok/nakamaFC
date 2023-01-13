@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { IM_Fell_Double_Pica } from '@next/font/google'
 
 const IM = IM_Fell_Double_Pica({
-    weight: '400'
+    subsets: ['latin'], weight: ['400'], display: 'swap'
 })
 
 let StyledNav = styled.div`
