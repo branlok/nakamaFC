@@ -18,16 +18,16 @@ let StyledGeneralBlock = styled.div`
     background-color: ${props => props.theme.colors.primary};
 
     .content {
-        color: white;
+        color: #ebebeb;
         /* text-align: center; */
         font-size: ${props => props.theme.fontSize.xxxl};
         font-family: ${IM.style.fontFamily};
         display: flex;
-        max-width: 1000px;
+        max-width: 900px;
         // X-Large devices (large desktops, less than 1400px)
         @media (max-width: 1399.98px) { 
             font-size: ${props => props.theme.fontSize.xxl};
-            max-width: 800px;
+            max-width: 700px;
         }
         // Large devices (desktops, less than 1200px)
         @media (max-width: 1199.98px) { 

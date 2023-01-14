@@ -17,13 +17,13 @@ export default function Billboard() {
 
     return (
         <StyledHeader style={{ ...spring }}>
-            <h1>WELCOME TO NAKAMA</h1>
+            <h1>WELCOME TO <br /> NAKAMA</h1>
             <h2 className='sub-heading'>A Final Fantasy 14 Free Company</h2>
-            <div className='levitate-wrapper-left'>
-                <img className='moogle-image' src="/moogle.png" />
+            <div className='levitate-wrapper-left '>
+                <img className='moogle-image moogle' src="/moogle.png" />
             </div>
             <div className='levitate-wrapper-right'>
-                <img className='moogle-image-mirrored' src="/moogle.png" />
+                <img className='moogle-image-mirrored moogle' src="/moogle.png" />
             </div>
         </StyledHeader >
     )

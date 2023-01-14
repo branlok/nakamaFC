@@ -17,6 +17,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${myFont.style.fontFamily};
     background-color: black;
     position: relative;
+    overflow-x: hidden;
+  }
+  body {
+    overflow-x: hidden;
   }
   * {
     box-sizing: border-box;
