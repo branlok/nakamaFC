@@ -6,17 +6,20 @@ let StyledCover = styled.div`
     width: 100%;
     overflow: hidden;
     position: relative;
-    padding: 5px;
     background-size: cover;
     background-position: center center;
     background-image: url('https://media.discordapp.net/attachments/1004935837441593544/1057422892029202542/Screenshot_2022-12-27_at_5.20.44_PM.png?width=2140&height=1326');
-    padding: 50px;
-    perspective: 1000;
+    padding: 70px;
+    perspective: 500;
+    padding-bottom: 120px;
     // Medium devices (tablets, less than 992px)
     @media (max-width: 991.98px) { 
     height: calc(65vh - 120px);
-    min-height: 500px;
+        min-height: 500px;
     }
+    @media (max-width: 575.98px) { 
+        padding: 0px;
+        }
 `
 
 export default StyledCover;

@@ -1,7 +1,7 @@
 import { a } from "@react-spring/web";
 import styled from "styled-components";
 
-let StyledAnimatedCap = styled(a.div) <{ top: string, visible: boolean }>`
+let StyledAnimatedCap = styled(a.div) <any>`
 width: 100%;
 margin-bottom: -2px;
 height: 0px;
@@ -21,12 +21,14 @@ background-color: ${props => props.theme.colors.primary};
 .hidden-text {
     position: absolute;
     bottom: 0px;
-    color: ${props => props.visible ? 'transparent' : 'white'}; //white;
+    color: ${props => props.show ? 'transparent' : 'white'}; //white;
     display: flex;
     justify-content: center;
     padding-top: 50px;
+    font-size: ${props => props.theme.fontSize[props.textSize]};
     width: 100%;
     transition: 1s;
+    /* border: 1px solid white; */
 }
 `
 

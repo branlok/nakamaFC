@@ -4,12 +4,16 @@ import Wave from '../../assets/wave';
 import StyledAnimatedCap, { StyledAnimatedSvg } from './styled';
 
 type Props = {
+    heading: string,
     intersectPosition: 'top' | 'middle' | 'bottom'
     height?: number
     overrideIntialVisibility?: boolean     //for front-page stuff
+    configuration: {
+        titleSize: 'sm' | 'md' | 'lg'
+    }
 }
 
-function WaveCap({ intersectPosition = 'top', height = 50, overrideIntialVisibility = false }: Props) {
+function WaveCap({ heading, intersectPosition = 'top', height = 50, overrideIntialVisibility = false, configuration = { titleSize: 'lg' } }: Props) {
 
 
     let [visible, setVisible] = useState(overrideIntialVisibility);
@@ -23,6 +27,7 @@ function WaveCap({ intersectPosition = 'top', height = 50, overrideIntialVisibil
         })
         observer.observe(intersectRef.current as any);
     }, [])
+    
     //configurables
     let intersectables: {
         top: string,
@@ -71,7 +76,7 @@ function WaveCap({ intersectPosition = 'top', height = 50, overrideIntialVisibil
 
 
     return (
-        <StyledAnimatedCap style={spring2} visible={visible} top={intersectables[intersectPosition]} className="svg-wrapper">
+        <StyledAnimatedCap textSize={configuration.titleSize} style={spring2} show={visible} top={intersectables[intersectPosition]} className="svg-wrapper">
             <StyledAnimatedSvg style={spring} preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 1031.842 42.5"
                 width="1em"
@@ -85,8 +90,8 @@ function WaveCap({ intersectPosition = 'top', height = 50, overrideIntialVisibil
                     d="M1031.342 19.391c-16.671 7.281-46.056 11.486-78.265 13.443C889.491 36.697 900.98 3.22 841.673 3.22c-75.445 0-80.014 42.04-153.71 31.683-19.743-2.774-38.55-26.36-68.394-31.729-38.598-6.944-55.702.046-103.648 16.217V42h515.421Z"
                 />
             </StyledAnimatedSvg>
-            <div ref={intersectRef} className='observer'>xxx</div>
-            <div className='hidden-text'> POGGGG</div>
+            <div ref={intersectRef} className='observer'></div>
+            <div className='hidden-text'> {heading}</div>
         </StyledAnimatedCap>
     )
 }

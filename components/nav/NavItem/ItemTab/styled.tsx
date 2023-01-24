@@ -1,14 +1,11 @@
 import styled from 'styled-components';
 
 let StyledTab = styled.div`
-
     color: ${props => props.theme.fontColors.secondary};
     margin-top: 2px;
     margin-bottom: 2px;
-
     background-color: ${props => props.theme.colors['background']};
     border: 1px solid rgba(0,0,0,0.4);
-    text-align: center;
     font-size: ${(props) => props.theme.fontSize.base};
     width: 100%;
     border-radius: 2px;
@@ -16,6 +13,15 @@ let StyledTab = styled.div`
     padding-bottom: 10px;
     transition: 0.2s;
     cursor: pointer;
+    
+    a {
+        display: inline-block;
+        display: flex;
+        justify-content: center;
+        text-decoration: none ;
+        color: white;
+        text-align: center;
+    }
     :hover {
         color: ${props => props.theme.fontColors.primary};
         background-color: ${props => props.theme.colors['background-contrast']};

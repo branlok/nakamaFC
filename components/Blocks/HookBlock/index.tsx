@@ -7,13 +7,16 @@ type Props = {}
 
 // limit the amount of text, since this is a hook that takes rendesr large fonts.
 
-function HookBlock({ }: Props) {
+function HookBlock({ hookContent, hookHeading }: any) {
     return (
         <>
-            <WaveCap intersectPosition={'top'} overrideIntialVisibility={true} height={50} />
+            <WaveCap heading={hookHeading} intersectPosition={'top'} overrideIntialVisibility={true} height={50} configuration={{
+                titleSize: 'lg'
+            }} />
             <StyledBlockWrapper>
                 <div className="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget volutpat tortor.
+                    {hookContent}
+                    {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget volutpat tortor. */}
                 </div></StyledBlockWrapper></>
     )
 }

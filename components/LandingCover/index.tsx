@@ -1,10 +1,10 @@
 import Billboard from "./Billboard"
 import StyledCover from "./styled"
 
-export default function LandingCover() {
+export default function LandingCover({ title, tagline }: any) {
     return (
         <StyledCover>
-            <Billboard />
+            <Billboard title={title} tagline={tagline} />
         </StyledCover >
     )
 }

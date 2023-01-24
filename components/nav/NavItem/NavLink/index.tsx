@@ -4,7 +4,7 @@ import StyledLink from "./styled";
 export default function Navigator({ name, hovered }: { name: string, hovered: boolean }) {
     return (
         <StyledLink hovered={hovered}>
-            <Link href="/">{name}</Link>
+            <Link href={`/${name.toLocaleLowerCase()}`}>{name}</Link>
         </StyledLink>
     )
 }

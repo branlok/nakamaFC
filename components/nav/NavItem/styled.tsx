@@ -12,6 +12,9 @@ let StyledNavItem = styled.div`
     margin-left: 5px;
     margin-right: 5px;
     z-index: 1;
+    @media (max-width: 575.98px) { 
+        width: 70px;
+          }
     .link-wrapper {
     height: 100%;
     width: 100%;
@@ -37,6 +40,9 @@ let StyledNavItem = styled.div`
     z-index: 1;
     border: 1px solid  rgba(255,255,255,0.1);
     border-radius: 3px;
+    @media (max-width: 575.98px) { 
+            left: -100px;
+          }
     ::before {
         content: "";
         width: 10px;
@@ -50,6 +56,9 @@ let StyledNavItem = styled.div`
         border-left: 1.5px solid rgba(255,255,255,0.1);
         border-top: 1.5px solid  rgba(255,255,255,0.1);
         border-radius: 2px;
+        @media (max-width: 575.98px) { 
+            left: calc(50% + 50px);
+          }
     }
     .wrapper {
         border: 2px solid #392D10;

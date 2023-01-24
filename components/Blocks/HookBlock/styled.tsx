@@ -14,6 +14,7 @@ let StyledBlockWrapper = styled.div`
     align-items: center;
     justify-content: center;
     padding: 50px;
+    margin-top: -2px;
     background-color: ${props => props.theme.colors.primary};
     .content {
         color: white;

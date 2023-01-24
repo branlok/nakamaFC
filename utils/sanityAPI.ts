@@ -1,8 +1,9 @@
 const sanityClient = require('@sanity/client')
 const TOKEN = process.env.TOKEN;
+const PROJECTID = process.env.PROJECTID;
 
 const client = sanityClient({
-  projectId: '24jcy0ne',
+  projectId: PROJECTID,
   dataset: 'production',
   apiVersion: '2023-01-10', // use current UTC date - see "specifying API version"!
   token: TOKEN, // or leave blank for unauthenticated usage
@@ -11,3 +12,5 @@ const client = sanityClient({
 
 
 export default client
+
+//

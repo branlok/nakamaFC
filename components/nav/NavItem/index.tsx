@@ -6,7 +6,7 @@ import NavLink from "./NavLink";
 import StyledNavItem from "./styled";
 
 
-export default function NavItem({ name, subMenu }: { name: string, subMenu: string[] }) {
+export default function NavItem({ name, subMenu, belongTo }: { name: string, subMenu: string[], belongTo: string }) {
     let [onHover, setOnHover] = useState(false);
 
     let [styles, api] = useSpring(() => (
@@ -16,7 +16,7 @@ export default function NavItem({ name, subMenu }: { name: string, subMenu: stri
             config: config.stiff
         }
     ), [onHover])
-    console.log(subMenu)
+
     return (
         <StyledNavItem onMouseEnter={() => setOnHover(true)} onMouseLeave={() => setOnHover(false)}>
             <div className="link-wrapper">
@@ -26,7 +26,7 @@ export default function NavItem({ name, subMenu }: { name: string, subMenu: stri
                 <div className="wrapper">
                     <div className="title">{name}</div>
                     {subMenu.map((item, index) => {
-                        return <ItemTab key={index} name={item} />
+                        return <ItemTab belongTo={belongTo} key={index} name={item} />
                     })}
                 </div>
             </a.div>}

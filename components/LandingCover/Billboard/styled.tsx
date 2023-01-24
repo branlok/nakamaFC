@@ -25,12 +25,29 @@ to {
 }
 `
 
+
+let levitate3 = keyframes`
+from {
+    transform: rotateZ(-0.5deg);
+}
+to {
+    transform: rotateZ(1.5deg);
+}
+`
+
+let fadeIn = keyframes`
+    from {opacity: 0;}
+    to {opacity: 1;}
+
+`
+
 let StyledHeader = styled(a.div)`
     width: 100%;
     height: 100%;
     border-radius: 70px;
-    background-color: ${props => props.theme.colors.primary};
-    border: 14px solid rgb(237, 28, 36,0.3);
+    background-color: ${props => props.theme.colors['primary']};
+    border: 13px solid rgb(237, 28, 36,0.6);
+    /* border: 20px solid  ${props => props.theme.colors['primary-contrast']};; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,7 +59,13 @@ let StyledHeader = styled(a.div)`
     position: relative;
     overflow: hidden;
     box-shadow: inset 0 0 60px 30px #000000, 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);;
-
+    animation: ${levitate3} 3s ease infinite alternate;
+    :before {
+        /* content: '';
+        position: absolute;
+        min-width: 2000px;
+        transform: rotate(45deg); */
+    }
     @media (max-width: 575.98px) { 
         border: none;
         }
@@ -53,9 +76,18 @@ let StyledHeader = styled(a.div)`
         width: 100%;
         height: 100%;
         background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
-        opacity: 0.15;
-        z-index: 0;
+        /* background-image: linear-gradient(to right top, #0f0843, #261160, #3f177d, #5c1c9a, #7c1eb6); */
+        opacity: 0.25;
+        z-index: -1;
         pointer-events: none;
+    }
+    .rope {
+        position: fixed;
+        width: 1000px;
+        height: 100%;
+        background-color: white;
+        top: 150px;
+        left: 150px;
     }
     h1 {
         text-align: center;
@@ -63,6 +95,8 @@ let StyledHeader = styled(a.div)`
         font-family: ${IM.style.fontFamily};
         font-size: 8rem;
         transition: 0.2s;
+        /* animation:${levitate3} 2s ease-in-out infinite alternate; */
+        animation-delay: 2s;
         @media (max-width: 1399.98px) { 
             font-size: 6rem;
         }
@@ -79,6 +113,22 @@ let StyledHeader = styled(a.div)`
             height: 150px;
         }
     }
+    @media (max-width: 1399.98px) { 
+        border-radius: 50px;
+        }
+        @media (max-width: 1199.98px) { 
+            border-radius: 40px;
+        }
+        @media (max-width: 991.98px) { 
+            border-radius: 30px;
+         }
+        @media (max-width: 767.98px) { 
+            border-radius: 15px;
+        }
+        @media (max-width: 575.98px) { 
+            animation: none;
+            border-radius: 0;
+        }
   .sub-heading {
     padding: 5px 70px;
     background-color:  ${props => props.theme.colors.accent};
@@ -118,14 +168,24 @@ let StyledHeader = styled(a.div)`
   }
   .moogle-image {
     height: 300px;
-    transform: rotateZ(-10deg) translateX(50px);
+    transform: scale(1.7) rotateZ(-40deg) translateX(100px) translateY(-30%);
+    animation:${fadeIn} 2s ease forwards;
+    opacity:0;
+    animation-delay: 0.5s;
   }
   .moogle-image-mirrored {
     height: 300px;
     position: absolute;
     left: 7%;
     top: 10%;
-    transform: rotateY(180deg);
+    opacity:0;
+    transform: scale(1.7) translateX(30px) translateY(50%);
+    animation:${fadeIn} 2s ease forwards;
+    animation-delay: 0.5s;
+    /* transform: rotateY(180deg); */
+    @media (max-width: 767.98px) { 
+        margin-top: -50px;
+        }
   }
 
   .moogle {

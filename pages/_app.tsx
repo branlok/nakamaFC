@@ -18,9 +18,11 @@ const GlobalStyle = createGlobalStyle`
     background-color: black;
     position: relative;
     overflow-x: hidden;
+    background-color: #0A0E1B;
   }
   body {
     overflow-x: hidden;
+    background-color: #0A0E1B;
   }
   * {
     box-sizing: border-box;
@@ -30,6 +32,15 @@ const GlobalStyle = createGlobalStyle`
     margin: 0px;
     display: block;
   }
+  body::-webkit-scrollbar {
+  background: transparent; /* Chrome/Safari/Webkit */
+  width: 0px;
+}
+    
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
 `
 
 
@@ -47,12 +58,14 @@ interface ThemeInterface {
     "secondary": string
   },
   fontSize: {
+    xs: string,
     sm: string,
     base: string,
     lg: string,
     xl: string,
     xxl: string,
     xxxl: string,
+    xxxxl: string
   }
 }
 
@@ -62,7 +75,7 @@ const theme: ThemeInterface = {
     "background-contrast": '#1D1D1D',
     "primary": '#0A0E1B',
     "primary-contrast": '#1C1931',
-    accent: '#D2353B',
+    accent: '#ca1016',
     "secondary-accent": '#F7931D'
 
   },
@@ -71,12 +84,14 @@ const theme: ThemeInterface = {
     secondary: "#D9D9D9"
   },
   fontSize: {
+    xs: '0.5rem',
     sm: '0.75rem', /* 12px */
     base: '1rem',   /* 16px, base */
     lg: '1.25rem', /* 20px */
     xl: '1.5rem', /* 24px */
     xxl: '1.75rem', /* 28px */
-    xxxl: '2rem'    /* 32px */
+    xxxl: '2rem',    /* 32px */
+    xxxxl: '4rem'
   }
 }
 

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 let StyledLink = styled.div<{ hovered: boolean }>`
     position: relative;
-    border: 1.5px solid rgba(40,40,40,1);
+    border: 1.5px solid ${props => props.hovered ? '#b18024d2' : '#393939'};
     width: 115px;
     height: 25px;
     border-radius: 40px;
@@ -20,8 +20,9 @@ let StyledLink = styled.div<{ hovered: boolean }>`
         font-size: ${(props => props.theme.fontSize.sm)};
     }
     :hover {
-    background: linear - gradient(0deg, rgba(0, 0, 0, 0.51614583333333337) 0%, #00000019 32%, rgba(0, 0, 0, 0) 82%);
-    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.51614583333333337) 0%, #00000019 32%, rgba(0, 0, 0, 0) 82%); */
+    border: 1.5px solid orange
+
 
 }
     &:before {
