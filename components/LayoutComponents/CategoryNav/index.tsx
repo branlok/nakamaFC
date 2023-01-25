@@ -10,10 +10,9 @@ function CategoryNav({ categories }: any) {
     return (
         <div className='tab'>
             <h1>
-                Welcome to The Blog
+                Welcome to the Blog
             </h1>
             <StyledCategoryNav>
-
                 <StyledItem href={'/blog'} selected={router.pathname === '/blog'}>Most Recent</StyledItem>
                 {categories.map((item: any) => <StyledItem key={item.blogCategoryName} selected={router.query.category == item.blogCategoryName} href={`/blog/categories/${item.blogCategoryName}`}>{item.blogCategoryName}</StyledItem>)}
             </StyledCategoryNav>

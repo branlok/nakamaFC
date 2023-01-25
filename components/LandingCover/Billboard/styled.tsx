@@ -97,8 +97,10 @@ let StyledHeader = styled(a.div)`
         font-family: ${IM.style.fontFamily};
         font-size: 8rem;
         transition: 0.2s;
+        animation:${fadeIn} 2.5s ease forwards;
+        opacity:0;
+        animation-delay: 2.7s;
         /* animation:${levitate3} 2s ease-in-out infinite alternate; */
-        animation-delay: 2s;
         @media (max-width: 1399.98px) { 
             font-size: 6rem;
         }
@@ -144,6 +146,9 @@ let StyledHeader = styled(a.div)`
     justify-content: center;
     font-family: ${myFont.style.fontFamily};
     align-items: center;
+    animation:${fadeIn} 2s ease forwards;
+    opacity:0;
+    animation-delay: 2.7s;
         @media (max-width: 1399.98px) { 
         }
         @media (max-width: 1199.98px) { 

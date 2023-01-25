@@ -1,10 +1,8 @@
 import styled from "styled-components";
 
-import { IM_Fell_Double_Pica } from '@next/font/google'
 
-const IM = IM_Fell_Double_Pica({
-    subsets: ['latin'], weight: ['400'], display: 'swap'
-})
+import localFont from '@next/font/local';
+const myFont = localFont({ src: '../../../utils/HandjetFlowerDouble-Medium.woff2', display: 'swap' })
 
 
 let StyledFooter = styled.div`
@@ -19,7 +17,9 @@ let StyledFooter = styled.div`
     border-top: 5px solid rgba(255,255,255,0.2);
     overflow: hidden;
     position: relative;
-
+    h1 {
+        font-family: ${myFont.style.fontFamily};
+    }
     .footer-section-wrapper {
         display: flex;
         height: 100%;
