@@ -18,6 +18,7 @@ margin-bottom: 10px;
 transition: 0.2s;
 position: relative;
 background-color: rgba(0,0,0,0.2);
+overflow: hidden;
 :after {
     content: '→';
     position: absolute;
@@ -43,10 +44,13 @@ img {
     height: 100px;
     padding: 0px 10px;
     overflow-y: scroll;
+    width: 100%;
+    scrollbar-width: none;
     ::-webkit-scrollbar {
             width: 0px;
             background: transparent; /* make scrollbar transparent */
-        }
+            
+            }
 }
 .name {
     font-size: ${props => props.theme.fontSize.lg};

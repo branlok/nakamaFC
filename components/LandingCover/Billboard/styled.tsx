@@ -175,7 +175,7 @@ let StyledHeader = styled(a.div)`
     transform: scale(1.7) rotateZ(-40deg) translateX(100px) translateY(-30%);
     animation:${fadeIn} 2s ease forwards;
     opacity:0;
-    animation-delay: 0.5s;
+    animation-delay: 1.5s;
   }
   .moogle-image-mirrored {
     height: 300px;

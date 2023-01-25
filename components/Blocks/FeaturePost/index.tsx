@@ -44,11 +44,16 @@ function FeaturePost({ data }: any) {
     }, []);
 
     useEffect(() => {
+        let timeout: string | number | NodeJS.Timeout | undefined;
         if (ref.current && imageRef.current) {
-            setContentHeight(ref.current.scrollHeight);
-            setImageHeight(imageRef.current.clientHeight);
+            timeout = setTimeout(() => {
+                setContentHeight(ref?.current?.scrollHeight ?? 500);
+                setImageHeight(imageRef?.current?.clientHeight ?? 500);
+            }, 500)
         }
-
+        return () => {
+            clearTimeout(timeout)
+        }
     }, [data, dimensions]);
 
     const myPortableTextComponents = {

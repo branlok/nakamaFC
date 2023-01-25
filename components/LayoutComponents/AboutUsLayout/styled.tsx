@@ -43,6 +43,7 @@ let StyledAboutUsWrapper = styled.div`
         font-family: ${IM.style.fontFamily};
         padding: 0px 5.5%;
         border-right: 1px solid rgba(255,255,255,0.2);
+        
         svg {
             .a{fill:#fff}
             .b{fill:#fff}
@@ -58,7 +59,7 @@ let StyledAboutUsWrapper = styled.div`
             overflow: scroll;
             height: 100%;
             width: 100%;
-            
+            scrollbar-width: none;
             ::-webkit-scrollbar {
             width: 0px;
             background: transparent; /* make scrollbar transparent */
@@ -72,6 +73,7 @@ let StyledAboutUsWrapper = styled.div`
             overflow: hidden;
             width: 100%;
             z-index: 2;
+            
             > * {
                 animation: ${translateIn} 1.5s ease forwards;
             }
