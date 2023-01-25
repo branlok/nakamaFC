@@ -15,7 +15,7 @@ export default function LandingCover({ title, tagline, image }: any) {
         }
     })
     return (
-        <StyledCover style={spring} bgImage={parseAssetId(image)}>
+        <StyledCover style={spring} bgImage={''}>
             <Billboard title={title} tagline={tagline} />
         </StyledCover >
     )

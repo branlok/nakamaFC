@@ -65,10 +65,10 @@ export let StyledHeaderWrapper = styled(a.div)`
         background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
         /* background-image: linear-gradient(to right top, #0f0843, #261160, #3f177d, #5c1c9a, #7c1eb6); */
         background-color: #000000;
-        opacity: 0.18;
+        opacity: 0.28;
         z-index: -1;
         pointer-events: none;
-        transition: 0.2s;
+        transition: 2s;
     }
     :before {
         content: "";
@@ -76,12 +76,12 @@ export let StyledHeaderWrapper = styled(a.div)`
         top: 0;
         width: 100%;
         height: 100%;
-     opacity: 0.2;
+        opacity: 0.3;
         z-index: 0;
         pointer-events: none;
         background-color: #171717;
 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1259' height='151.1' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23000000' stroke-width='7.9' %3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");  
-transition: 0.2s;
+transition: 2s;
 }
 :hover:before {
             opacity: 0.28;
@@ -90,8 +90,10 @@ transition: 0.2s;
 :hover:after {
             opacity: 0.58;
 
+
 }
 background: transparent;
+background-color: black;
 @media (max-width: 767.98px) { 
         background: transparent;
         height: 100%;
@@ -239,7 +241,6 @@ let StyledHeader = styled(a.div)`
     border-style: none;
     padding: 10px;
     border-radius: 50px;
-    background-color: white;
   }
 `
 
