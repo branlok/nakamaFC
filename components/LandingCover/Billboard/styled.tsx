@@ -154,9 +154,6 @@ let StyledHeader = styled(a.div)`
         @media (max-width: 767.98px) { 
             font-size: 3rem;
         }
-        @media (max-width: 575.98px) { 
-            height: 150px;
-        }
     }
    
   .sub-heading {
@@ -175,7 +172,11 @@ let StyledHeader = styled(a.div)`
     animation:${fadeIn} 2s ease forwards;
     opacity:0;
     animation-delay: 2.7s;
+    @media (max-width: 767.98px) { 
+        font-size: ${props => props.theme.fontSize.xs};
+    }
   }
+
   .levitate-wrapper-left {
     position: absolute;
     left: 50px;

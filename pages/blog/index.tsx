@@ -21,7 +21,7 @@ function Blog({ apiPackage, postList, categories }: any) {
 
 
     return (
-        <div>
+        <div className='main-content'>
             <Nav subPath={'Blog'} blogCategories={categories} />
             <BlogLayout categoryNav={<CategoryNav categories={categories} />} secondaryColumnData={postList} mainPosts={[...items, <FooterLayout key={'footer'} primaryBlock={<FooterA blogLinks={categories} />} secondaryBlock={<FooterLinks />} />]}>
             </BlogLayout>

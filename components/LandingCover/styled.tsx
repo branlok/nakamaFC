@@ -22,7 +22,7 @@ let StyledCover = styled(a.div) <{ bgImage: string }>`
     @media (max-width: 767.98px) { 
         padding: 0px;
         border: 0px;
-        height: 400px;
+        height: 600px;
         }    
     
 `

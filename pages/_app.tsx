@@ -31,13 +31,11 @@ const GlobalStyle = createGlobalStyle`
   h1, h2, p {
     font-family: ${IM.style.fontFamily};
   }
+  
   body {
     overflow-x: hidden;
     /* background-color: #0A0E1B; */
-    .main-content {
-      height: calc(100% - 45px);
-      
-    }
+
   }
   * {
     box-sizing: border-box;
