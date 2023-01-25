@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "npm run clone-or-pull",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "clone-or-pull": "node ./prebuildResources/generate.mjs"
   },
   "dependencies": {
     "@next/font": "^13.1.1",
