@@ -43,13 +43,72 @@ let fadeIn = keyframes`
 
 `
 
+
+
+export let StyledHeaderWrapper = styled(a.div)`
+    min-height: 100%;
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    overflow: hidden;
+    background-color: ${props => props.theme.colors['primary']};
+    position: relative;
+    z-index: 2;
+    /* border: 20px solid #7a0907d0; */
+    /* border-radius: 50px 50px 50px 50px; */
+    :after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+        /* background-image: linear-gradient(to right top, #0f0843, #261160, #3f177d, #5c1c9a, #7c1eb6); */
+        background-color: #000000;
+        opacity: 0.18;
+        z-index: -1;
+        pointer-events: none;
+        transition: 0.2s;
+    }
+    :before {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+     opacity: 0.2;
+        z-index: 0;
+        pointer-events: none;
+        background-color: #171717;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1259' height='151.1' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23000000' stroke-width='7.9' %3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");  
+transition: 0.2s;
+}
+:hover:before {
+            opacity: 0.28;
+
+}
+:hover:after {
+            opacity: 0.58;
+
+}
+background: transparent;
+@media (max-width: 767.98px) { 
+        background: transparent;
+        height: 100%;
+        width: 100%;
+        /* border: none; */
+        }    
+    @media (max-width: 575.98px) { 
+        border: none;
+        }
+
+`
+
+
 let StyledHeader = styled(a.div)`
     width: 100%;
     height: 100%;
-    border-radius: 70px;
     background-color: ${props => props.theme.colors['primary']};
-    border: 15px solid rgb(237, 28, 36,0.2);
-    /* border: 20px solid  ${props => props.theme.colors['primary-contrast']};; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,29 +119,10 @@ let StyledHeader = styled(a.div)`
     flex-direction: column;
     position: relative;
     overflow: hidden;
-    box-shadow: inset 0 0 60px 30px #000000, 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);;
-    animation: ${levitate3} 3s ease infinite alternate;
-    :before {
-        /* content: ''; */
-        /* position: absolute;
-        min-width: 2000px;
-        transform: rotate(120deg); */
-    }
-    @media (max-width: 575.98px) { 
-        border: none;
-        }
-    ::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
-        /* background-image: linear-gradient(to right top, #0f0843, #261160, #3f177d, #5c1c9a, #7c1eb6); */
-        opacity: 0.14;
-        z-index: -1;
-        pointer-events: none;
-    }
+    /* animation: ${levitate3} 3s ease infinite alternate; */
+    padding: 90px;
+    background: transparent; 
+    box-shadow: inset 0 0px 200px 20px #000000;
     .rope {
         position: fixed;
         width: 1000px;
@@ -96,11 +136,12 @@ let StyledHeader = styled(a.div)`
         padding: 25px;
         font-family: ${IM.style.fontFamily};
         font-size: 8rem;
+        margin: 0px;
         transition: 0.2s;
+        margin: 10px;
         animation:${fadeIn} 2.5s ease forwards;
         opacity:0;
         animation-delay: 2.7s;
-        /* animation:${levitate3} 2s ease-in-out infinite alternate; */
         @media (max-width: 1399.98px) { 
             font-size: 6rem;
         }
@@ -117,24 +158,9 @@ let StyledHeader = styled(a.div)`
             height: 150px;
         }
     }
-    @media (max-width: 1399.98px) { 
-        border-radius: 50px;
-        }
-        @media (max-width: 1199.98px) { 
-            border-radius: 40px;
-        }
-        @media (max-width: 991.98px) { 
-            border-radius: 30px;
-         }
-        @media (max-width: 767.98px) { 
-            border-radius: 15px;
-        }
-        @media (max-width: 575.98px) { 
-            animation: none;
-            border-radius: 0;
-        }
+   
   .sub-heading {
-    padding: 5px 70px;
+    padding: 5px 20px;
     background-color:  ${props => props.theme.colors.accent};
     color: white;
     border: 2px solid rgba(0,0,0,0.2);
@@ -149,79 +175,64 @@ let StyledHeader = styled(a.div)`
     animation:${fadeIn} 2s ease forwards;
     opacity:0;
     animation-delay: 2.7s;
-        @media (max-width: 1399.98px) { 
-        }
-        @media (max-width: 1199.98px) { 
-        }
-        @media (max-width: 991.98px) { 
-            font-size: ${props => props.theme.fontSize.sm};
-            border: 1px solid rgba(0,0,0,0.2);
-            padding: 5px 30px;
-         }
-        @media (max-width: 767.98px) { 
-        }
-        @media (max-width: 575.98px) { 
-        }
   }
   .levitate-wrapper-left {
     position: absolute;
-    right: 8%;
-    top: 50%;
+    left: 50px;
+    /* top: 50%; */
+    top: 40px;
     animation: ${levitate} 1s ease-in-out infinite alternate;
+    pointer-events: none;
+    .moogle-image {
+    height: 300px;
+    /* border:1px solid white; */
+    transform: scale(1.3) rotateZ(15deg);
+    animation:${fadeIn} 2.5s ease forwards;
+    opacity:0;
+    animation-delay: 1s;
+  }
   }
   .levitate-wrapper-right {
     position: absolute;
-    left: 3%;
-    top: 10%;
+    right: 40px;
+    bottom: 40px;
+    pointer-events: none;
+    /* border:1px solid white; */
     animation: ${levitate2} 1s ease-in-out infinite alternate;
-  }
-  .moogle-image {
-    height: 300px;
-    transform: scale(1.7) rotateZ(-40deg) translateX(100px) translateY(-30%);
-    animation:${fadeIn} 2s ease forwards;
-    opacity:0;
-    animation-delay: 1.5s;
-  }
-  .moogle-image-mirrored {
-    height: 300px;
-    position: absolute;
-    left: 7%;
-    top: 10%;
-    opacity:0;
-    transform: scale(1.7) translateX(30px) translateY(50%);
-    animation:${fadeIn} 2s ease forwards;
-    animation-delay: 0.5s;
+    .moogle-image-mirrored {
+        height: 300px;
+        /* position: absolute; */
+        opacity:0;
+        transform-origin: center;
+        transform: rotateZ(12deg) scale(1.3);
+        animation:${fadeIn} 2.5s ease forwards;
+        animation-delay: 1.5s;
+        pointer-events: none;
     /* transform: rotateY(180deg); */
-    @media (max-width: 767.98px) { 
-        margin-top: -50px;
-        }
-  }
-
-  .moogle {
-    transition: 0.2s;
-pointer-events: none;
+  }}
+    .moogle {
+        pointer-events: none;
         @media (max-width: 1399.98px) { 
-            height: 300px;
+            max-height: 300px;
         }
         // Large devices (desktops, less than 1200px)
         @media (max-width: 1199.98px) { 
             font-size: ${props => props.theme.fontSize.xl};
-            height: 225px;
+            max-height: 225px;
         }
         // Medium devices (tablets, less than 992px)
         @media (max-width: 991.98px) { 
             font-size: ${props => props.theme.fontSize.lg};
-            height: 200px;
+            max-height: 200px;
          }
-         // Small devices (landscape phones, less than 768px)
-        @media (max-width: 767.98px) { 
-            font-size: ${props => props.theme.fontSize.base};
-            height: 200px;
+         @media (max-width: 767.98px) { 
+            max-height: 120px;
          }
-         @media (max-width: 575.98px) { 
-            height: 150px;
-          }
   }
+  /* .levitate-wrapper-left, .levitate-wrapper-right {
+
+
+  } */
 
   .hide {
     border-style: none;

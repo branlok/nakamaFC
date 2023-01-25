@@ -8,9 +8,11 @@ type Props = {}
 
 function ImageBlock({ url, alt }: any) {
     return (
+        <>
         <StyledImageBlock>
             <img src={url} />
         </StyledImageBlock>
+        </>
     )
 }
 

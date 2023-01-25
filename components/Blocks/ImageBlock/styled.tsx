@@ -15,9 +15,13 @@ let StyledImageBlock = styled.div`
     justify-content: center;
     background-color: ${props => props.theme.colors.primary};
     img {
+        /* margin-top: 30px; */
         width: 100%;
         object-fit: cover;
         max-height: 600px;
+        /* --mask: radial-gradient(15px at top,#0000 97%,#000) 50% / 27.75px 100%;
+  -webkit-mask: var(--mask);
+          mask: var(--mask); */
     }
 `
 export default StyledImageBlock;

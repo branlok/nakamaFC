@@ -1,26 +1,30 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import localFont from '@next/font/local'
+import { a } from '@react-spring/web';
 const myOhterFont = localFont({ src: '../../utils/IMFellDoublePica-Regular.ttf', display: 'swap' })
-let StyledCover = styled.div`
-    height: calc(98vh - 120px);
-    font-family: ${myOhterFont.style.fontFamily};
-    width: 100%;
-    overflow: hidden;
-    position: relative;
+let translateIn = keyframes`
+from {
+    transform: translateY(-500px);
+}
+to {
+    transform: translateY(0px);
+}
+`
+let StyledCover = styled(a.div) <{ bgImage: string }>`
+    padding: 0;
+    border-bottom: 10px solid black;
+    background-image: ${props => 'url(' + props.bgImage + ')'};
     background-size: cover;
     background-position: center center;
-    background-image: url('https://media.discordapp.net/attachments/1004935837441593544/1057422892029202542/Screenshot_2022-12-27_at_5.20.44_PM.png?width=2140&height=1326');
-    padding: 50px;
-    perspective: 500;
-    /* padding-bottom: 120px; */
-    // Medium devices (tablets, less than 992px)
-    @media (max-width: 991.98px) { 
-    height: calc(65vh - 120px);
-        min-height: 500px;
-    }
-    @media (max-width: 575.98px) { 
+    height: 90%;
+    background-color: ${props => props.theme.colors['primary']};
+    box-shadow: inset 0 10px 50px 30px #000000;
+    @media (max-width: 767.98px) { 
         padding: 0px;
-        }
+        border: 0px;
+        height: 400px;
+        }    
+    
 `
 
 export default StyledCover;

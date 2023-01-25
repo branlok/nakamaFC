@@ -17,7 +17,7 @@ let StyledGeneralBlock = styled.div<{ color?: string }>`
     padding-bottom: 200px;
     flex-direction: column;
     position: relative;
-    /* background-color: ${props => props.theme.colors.primary}; */
+    background-color: ${props => props.theme.colors.primary};
     z-index: 2;
     overflow: hidden;
     .content {

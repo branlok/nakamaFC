@@ -17,11 +17,12 @@ import getPrebuiltCategories from '../prebuildResources/prebuildScripts/getPrebu
 
 
 export default function Home({ apiPackage, categories }: { apiPackage: any, categories: any }) {
+  console.log(apiPackage)
   let ComponentBuilder = (resource: any) => {
     let ComponentBuilder = resource.map((item: any, i: number) => {
       switch (item._type) {
         case 'cover':
-          return <LandingCover key={i} title={item.heading} tagline={item.tagline} />;
+          return <LandingCover key={i} title={item.heading} tagline={item.tagline} image={item.landingImage.asset._ref} />;
           break;
         case 'landingHook':
           return <HookBlock key={i} hookContent={item.hookContent} hookHeading={item.hookHeading} wavesIncluded={item.transitionWaves} />;
@@ -58,8 +59,10 @@ export default function Home({ apiPackage, categories }: { apiPackage: any, cate
       </Head>
       <main>
         <Nav blogCategories={categories} />
-        {x}
-        <FooterLayout primaryBlock={<FooterA blogLinks={categories} />} secondaryBlock={<FooterLinks />} />
+        <div className='main-content'>
+          {x}
+          <FooterLayout primaryBlock={<FooterA blogLinks={categories} />} secondaryBlock={<FooterLinks />} />
+        </div>
       </main>
     </>
   )

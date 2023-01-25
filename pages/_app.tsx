@@ -21,17 +21,23 @@ const GlobalStyle = createGlobalStyle`
     height: 100vh;
     width: 100vw;
     font-family: ${myFont.style.fontFamily};
-    background-color: black;
+    /* background-color: black; */
     position: relative;
     overflow-x: hidden;
     background-color: #0A0E1B;
+    
+    
   }
   h1, h2, p {
     font-family: ${IM.style.fontFamily};
   }
   body {
     overflow-x: hidden;
-    background-color: #0A0E1B;
+    /* background-color: #0A0E1B; */
+    .main-content {
+      height: calc(100% - 45px);
+      
+    }
   }
   * {
     box-sizing: border-box;
@@ -82,7 +88,7 @@ const theme: ThemeInterface = {
   colors: {
     "background": '#141414',
     "background-contrast": '#1D1D1D',
-    "primary": '#0A0E1B',
+    "primary": '#0B0E1A', //  "primary": '#0d142c',
     "primary-contrast": '#1C1931',
     accent: '#ca1016',
     "secondary-accent": '#F7931D'
