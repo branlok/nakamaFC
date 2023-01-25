@@ -59,10 +59,8 @@ export default function Home({ apiPackage, categories }: { apiPackage: any, cate
       </Head>
       <main>
         <Nav blogCategories={categories} />
-        <div className='main-content'>
-          {x}
-          <FooterLayout primaryBlock={<FooterA blogLinks={categories} />} secondaryBlock={<FooterLinks />} />
-        </div>
+        {x}
+        <FooterLayout primaryBlock={<FooterA blogLinks={categories} />} secondaryBlock={<FooterLinks />} />
       </main>
     </>
   )
