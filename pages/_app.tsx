@@ -4,7 +4,7 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import localFont from '@next/font/local'
 
 // Font files can be colocated inside of `pages`
-const myFont = localFont({ src: '../utils/HandjetFlowerDouble-Medium.woff2', display: 'swap' })
+// const myFont = localFont({ src: '../utils/HandjetFlowerDouble-Medium.woff2', display: 'swap' })
 
 const GlobalStyle = createGlobalStyle`
 
@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     height: 100vh;
     width: 100vw;
-    font-family: ${myFont.style.fontFamily};
+
     background-color: black;
     position: relative;
     overflow-x: hidden;
