@@ -1,6 +1,4 @@
-export default function parseAssetId(ref: string) {
-    console.log('what did i get', ref);
-    
+export default function parseAssetId(ref: string) {    
     const [, id, dimensionString, format] = ref.split('-')
   
     if (!id || !dimensionString || !format) {

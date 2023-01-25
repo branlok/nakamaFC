@@ -9,7 +9,6 @@ function RegularPost({ title, author, createdOn, slug, avgColor, categories }: a
     let rgb = categories[0] ? "rgb(" + categories[0].color.r + "," + categories[0].color.g + "," + categories[0].color.b + ");" : 'rgba(255,255,255, 1)'
     let secondRGB = categories[1] ? "rgb(" + categories[1].color.r + "," + categories[1].color.g + "," + categories[1].color.b + ");" : rgb
     let thirdRGB = categories[2] ? "rgb(" + categories[2].color.r + "," + categories[2].color.g + "," + categories[2].color.b + ");" : rgb
-    console.log(secondRGB, rgb, 'HELLO')
     return (
         <StyledRegularPost bgColor={avgColor} primaryCategoryColor={rgb} secondaryCategoryColor={secondRGB} thirdCategoryColor={thirdRGB}>
             <div className="wrapper">

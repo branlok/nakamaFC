@@ -1,6 +1,8 @@
 import styled, { keyframes } from 'styled-components';
 import { IM_Fell_Double_Pica } from '@next/font/google'
 import { a } from '@react-spring/web';
+import localFont from '@next/font/local';
+const myFont = localFont({ src: '../../../utils/HandjetFlowerDouble-Medium.woff2', display: 'swap' })
 
 const IM = IM_Fell_Double_Pica({
     subsets: ['latin'], weight: ['400'], display: 'swap'
@@ -138,7 +140,9 @@ let StyledHeader = styled(a.div)`
     margin: 0px;
     display: flex;
     font-size: ${props => props.theme.fontSize.base};
+    font-family: Arial, Helvetica, sans-serif;
     justify-content: center;
+    font-family: ${myFont.style.fontFamily};
     align-items: center;
         @media (max-width: 1399.98px) { 
         }

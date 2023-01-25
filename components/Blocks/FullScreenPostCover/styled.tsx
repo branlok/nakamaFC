@@ -55,6 +55,13 @@ let StyledPresentationImage = styled.div`
     padding-bottom: 30px;
     text-align: center;
    }
+   .time {
+    color: white;
+    opacity: 0;
+    animation: ${fadeIn} 2s ease forwards;
+    animation-delay: 1s;
+   }
+
    button {
     border: none;
     margin:20px;

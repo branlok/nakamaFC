@@ -56,7 +56,6 @@ let blogpost = await client
     return data;
   })
   .then((json) => {
-    console.log(json, "s");
     fs.writeFile("./blogposts.json", JSON.stringify(json), (err) => {
       if (err) {
         throw new Error("Something went wrong.");

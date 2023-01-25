@@ -1,10 +1,10 @@
 import { PortableText } from '@portabletext/react';
-import { a, useSpring, config } from '@react-spring/web';
+import { a, useSpring } from '@react-spring/web';
 import React, { useEffect, useRef, useState } from 'react'
 import parseAssetId from '../../../utils/composeUrl';
 import PostNav from './PostNav';
-import StyledFeatureBlock, { StyledTag } from './styled'
-
+import StyledFeatureBlock from './styled'
+import TimeAgo from 'react-timeago'
 type Props = { author: string, title: string, content: string, createdOn: string, tags: string[], coverImage: string }
 
 function FeaturePost({ data }: any) {
@@ -69,7 +69,7 @@ function FeaturePost({ data }: any) {
                             {title}
                         </h1>
                         <h2 className='date-slot'>
-                            {/* {createdOn} */} Janurary 25, 2023
+                            <TimeAgo date={data.createdOn} />
                         </h2>
                         <div className="preview-box" ref={ref}>
                             <PortableText value={content} components={myPortableTextComponents} />

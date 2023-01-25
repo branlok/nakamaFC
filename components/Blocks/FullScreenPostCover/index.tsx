@@ -1,9 +1,9 @@
 import { a, config, useSpring } from '@react-spring/web';
 import React, { useEffect, useRef, useState } from 'react'
 import StyledPresentationImage from './styled'
+import TimeAgo from 'react-timeago'
 
-
-function FullScreenPostCover({ coverImage, title }: { coverImage: string, title: string }) {
+function FullScreenPostCover({ coverImage, title, createdOn }: { coverImage: string, title: string, createdOn: any }) {
     let [spring, api] = useSpring(() => {
         return {
             from: {
@@ -18,13 +18,12 @@ function FullScreenPostCover({ coverImage, title }: { coverImage: string, title:
             config: config.molasses
         }
     })
-
-
     return (
         <StyledPresentationImage >
             <img src={coverImage} />
             <div className="filter">
                 <a.h1 style={spring} >{title}</a.h1>
+                <TimeAgo className='time' date={createdOn} />
                 {/* <div>
                     <a.button style={spring}>Read Here</a.button>
                 </div> */}

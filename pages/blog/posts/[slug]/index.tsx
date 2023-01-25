@@ -1,9 +1,8 @@
-import { GetStaticProps } from 'next'
+
 import React from 'react'
 import PostNav from '../../../../components/Blocks/FeaturePost/PostNav'
 import FullScreenPostCover from '../../../../components/Blocks/FullScreenPostCover'
 import GeneralTextBlock from '../../../../components/Blocks/GeneralTextBlock'
-import Poll from '../../../../components/Blocks/Poll'
 import { getBlogPostData } from '../../../../components/helpers/getBlogPostData'
 import FooterLayout from '../../../../components/LayoutComponents/Footer'
 import FooterA from '../../../../components/LayoutComponents/Footer/Components/FooterA'
@@ -16,12 +15,12 @@ import client from '../../../../utils/sanityAPI'
 
 
 function Post({ apiPackage, categories }: any) {
-    let { author, blogCategories, blogpostImage, content, tags, title } = getBlogPostData(apiPackage);
-   
+    let { author, blogCategories, blogpostImage, content, tags, title,createdOn } = getBlogPostData(apiPackage);
+
     return (
         <div>
             <Nav subPath={'Blog'} blogCategories={categories} />
-            <PostLayout heading={title} head={<FullScreenPostCover coverImage={blogpostImage} title={title} />} body={[<PostNav disable3d={true} key={'postnav'} author={apiPackage.author.name} role={apiPackage.author.role} blogCategories={apiPackage.blogCategories} />, <GeneralTextBlock key={'GeneralTextBlock'} config={{ color: '#ddddea' }} data={apiPackage.content} extensibleFooter={null} />]} footer={<FooterLayout key={'footer'} primaryBlock={<FooterA />} secondaryBlock={<FooterLinks />} />} />
+            <PostLayout heading={title} head={<FullScreenPostCover createdOn={createdOn}  coverImage={blogpostImage} title={title} />} body={[<PostNav disable3d={true} key={'postnav'} author={apiPackage.author.name} role={apiPackage.author.role} blogCategories={apiPackage.blogCategories} />, <GeneralTextBlock key={'GeneralTextBlock'} config={{ color: '#ddddea' }} data={apiPackage.content} extensibleFooter={null} />]} footer={<FooterLayout key={'footer'} primaryBlock={<FooterA />} secondaryBlock={<FooterLinks />} />} />
         </div>
     )
 }

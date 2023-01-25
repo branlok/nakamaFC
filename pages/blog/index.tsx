@@ -15,7 +15,6 @@ import CategoryNav from '../../components/LayoutComponents/CategoryNav'
 type Props = any
 
 function Blog({ apiPackage, postList, categories }: any) {
-    // console.log(apiPackage);)
     let items = apiPackage.map((item: any, index: React.Key | null | undefined) => {
         return <FeaturePost key={index} data={item} />
     })
