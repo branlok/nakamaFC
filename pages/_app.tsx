@@ -5,7 +5,7 @@ import localFont from '@next/font/local'
 import { IM_Fell_Double_Pica } from '@next/font/google'
 
 const IM = IM_Fell_Double_Pica({
-    subsets: ['latin'], weight: ['400'], display: 'swap'
+  subsets: ['latin'], weight: ['400'], display: 'swap'
 })
 
 
@@ -18,8 +18,8 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     font-family: ${myFont.style.fontFamily};
     /* background-color: black; */
     position: relative;
