@@ -46,7 +46,7 @@ let StyledHeader = styled(a.div)`
     height: 100%;
     border-radius: 70px;
     background-color: ${props => props.theme.colors['primary']};
-    border: 13px solid rgb(237, 28, 36,0.6);
+    border: 15px solid rgb(237, 28, 36,0.2);
     /* border: 20px solid  ${props => props.theme.colors['primary-contrast']};; */
     display: flex;
     justify-content: center;
@@ -61,10 +61,10 @@ let StyledHeader = styled(a.div)`
     box-shadow: inset 0 0 60px 30px #000000, 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);;
     animation: ${levitate3} 3s ease infinite alternate;
     :before {
-        /* content: '';
-        position: absolute;
+        /* content: ''; */
+        /* position: absolute;
         min-width: 2000px;
-        transform: rotate(45deg); */
+        transform: rotate(120deg); */
     }
     @media (max-width: 575.98px) { 
         border: none;
@@ -77,7 +77,7 @@ let StyledHeader = styled(a.div)`
         height: 100%;
         background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
         /* background-image: linear-gradient(to right top, #0f0843, #261160, #3f177d, #5c1c9a, #7c1eb6); */
-        opacity: 0.25;
+        opacity: 0.14;
         z-index: -1;
         pointer-events: none;
     }
