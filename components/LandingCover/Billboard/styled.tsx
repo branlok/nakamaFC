@@ -190,6 +190,7 @@ let StyledHeader = styled(a.div)`
 
   .moogle {
     transition: 0.2s;
+pointer-events: none;
         @media (max-width: 1399.98px) { 
             height: 300px;
         }

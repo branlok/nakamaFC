@@ -67,7 +67,7 @@ export default function Home({ apiPackage, categories }: { apiPackage: any, cate
 
 export async function getStaticProps(context: GetStaticPropsContext) {
 
-  const query = '*[_type == "homePage" && landingSetup == "Placeholder Setup" && !(_id in path("drafts.**"))][0]';
+  const query = '*[_type == "homePage" && !(_id in path("drafts.**"))][0]';
   let apiRequest = await client.fetch(query).then((data: any) => {
     return data.pageBuilder;
   }).then((r: any) => {

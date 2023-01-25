@@ -41,17 +41,6 @@ export async function getStaticProps() {
     //0. top navigator - 
     let categoryData = await getPrebuiltCategories();
 
-    // const query3 = `*[_type == 'member'&& !(_id in path("drafts.**"))] {
-    //     'profileImage':  profileImage.asset._ref,
-    //     description,
-    //     name,
-    //     role
-    // }`
-
-    // let member = await client.fetch(query3).then((data: any) => {
-    //     return data;
-    // })
-
     let memberData = await getPrebuiltMemberDetails();
 
     return {

@@ -10,14 +10,12 @@ type Props = {}
 
 function AboutUsLayout({ data, members }: any) {
     let { title, content } = data;
-
     let [page, setPage] = useState('About Us');
 
     return (
         <StyledAboutUsWrapper>
             <div className="presentation">
                 <div className='content-wrapper'>
-
                     <h1>{page}</h1>
                     <div className="presentation-wrapper">
                         {page == 'About Us' &&
