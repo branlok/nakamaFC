@@ -2,6 +2,12 @@ import type { AppProps } from 'next/app'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 // pages/_app.js
 import localFont from '@next/font/local'
+import { IM_Fell_Double_Pica } from '@next/font/google'
+
+const IM = IM_Fell_Double_Pica({
+    subsets: ['latin'], weight: ['400'], display: 'swap'
+})
+
 
 // Font files can be colocated inside of `pages`
 const myFont = localFont({ src: '../utils/HandjetFlowerDouble-Medium.woff2', display: 'swap' })
@@ -21,7 +27,7 @@ const GlobalStyle = createGlobalStyle`
     background-color: #0A0E1B;
   }
   h1, h2, p {
-    font-family: ${myFont.style.fontFamily};
+    font-family: ${IM.style.fontFamily};
   }
   body {
     overflow-x: hidden;
