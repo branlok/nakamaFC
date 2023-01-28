@@ -8,6 +8,7 @@
     "build": "next build && next export",
     "start": "next start",
     "lint": "next lint",
+    "export": "next export",
     "clone-or-pull": "node ./prebuildResources/generate.mjs"
   },
   "dependencies": {
