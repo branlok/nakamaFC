@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import parseAssetId from '../../../utils/composeUrl'
 
 type Props = {}
 
 function ImagePanel({ images }: any) {
+
+
+
     return (
         <>
             <div className='marquee-1'>{
@@ -12,6 +15,7 @@ function ImagePanel({ images }: any) {
                 images.map((item: any, i: number) => <img key={i + 'b'} src={(item.imageData.url)} />)}</div>
         </>
     )
+
 }
 
 export default ImagePanel

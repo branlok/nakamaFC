@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import AboutUsLayout from '../../components/LayoutComponents/AboutUsLayout'
 import Nav from '../../components/nav'
 import getPrebuiltCategories from '../../prebuildResources/prebuildScripts/getPrebuiltCategories'
@@ -15,6 +15,8 @@ function AboutUs({ apiPackage, categories, members }: any) {
             <AboutUsLayout data={apiPackage} members={members} />
         </>
     )
+
+
 }
 
 export async function getStaticProps() {
