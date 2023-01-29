@@ -5,6 +5,9 @@ const nextConfig = {
   images: {
     domains: ['testing.bobhere.workers.dev'],
   },
+  images: {
+    unoptimized: true
+  }
 };
 
 module.exports = nextConfig;
