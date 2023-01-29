@@ -1,5 +1,6 @@
 import { PortableText } from '@portabletext/react';
 import { a, useSpring } from '@react-spring/web';
+import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react'
 import parseAssetId from '../../../utils/composeUrl';
 import PostNav from './PostNav';
@@ -84,14 +85,16 @@ function FeaturePost({ data }: any) {
                         </div>
                     </div>
                     <div className="right">
-                        <img ref={imageRef} src={newblogpostImage}>
-                        </img>
+                        <Image width="800" height="600" ref={imageRef} src={newblogpostImage}>
+                        </Image>
                     </div>
                 </a.div>
                 <>
                     <div className="blur-filter"></div>
-                    <img className='bg-image' src={newblogpostImage}>
-                    </img>
+                    {/* <img  src={newblogpostImage}> */}
+                    <Image className='bg-image' width="800" height="600" ref={imageRef} src={newblogpostImage}>
+                        </Image>
+                    {/* </img> */}
                 </>
 
             </div>
