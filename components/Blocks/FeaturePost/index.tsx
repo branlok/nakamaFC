@@ -85,15 +85,15 @@ function FeaturePost({ data }: any) {
                         </div>
                     </div>
                     <div className="right">
-                        <Image width="800" height="600" ref={imageRef} src={newblogpostImage}>
+                        <Image alt='' width="800" height="600" ref={imageRef} src={newblogpostImage}>
                         </Image>
                     </div>
                 </a.div>
                 <>
                     <div className="blur-filter"></div>
                     {/* <img  src={newblogpostImage}> */}
-                    <Image className='bg-image' width="800" height="600" ref={imageRef} src={newblogpostImage}>
-                        </Image>
+                    <Image alt='' className='bg-image' width="800" height="600" ref={imageRef} src={newblogpostImage}>
+                    </Image>
                     {/* </img> */}
                 </>
 
