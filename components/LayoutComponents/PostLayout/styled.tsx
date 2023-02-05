@@ -5,7 +5,7 @@ let falldown = keyframes`
 from {
     transform: translateY(-100%);
 }to {
-    transform: translateY(0%);
+    transform: translateY(0);
 }
 `
 
@@ -32,7 +32,9 @@ let StyledBlogPost = styled.div`
     .wrapper {
         display: flex;
         flex-direction: column;
-        animation: ${falldown} 1s ease forwards;
+        transform: translateY(-100%);
+        animation: ${falldown} 3s ease forwards;
+        animation-delay: 0.5s;
         background-color: ${props => props.theme.colors.primary};
         padding-bottom: 50px;
         /* :after {
@@ -43,7 +45,7 @@ let StyledBlogPost = styled.div`
             z-index: -1;
             opacity: 0.25;
             background: rgb(10,14,27);
-            background: linear-gradient(178deg, rgba(10,14,27,1) 35%, rgba(16,17,108,0.7273503151260504) 65%, rgba(120,33,184,0.6937368697478992) 79%, #66141486 90%, #44582939 100%);
+            background: linear-gradient(178deg, rgba(10,14,27,1) 15%, rgba(16,17,108,0.7273503151260504) 65%, rgba(120,33,184,0.6937368697478992) 79%, #66141486 90%, #44582939 100%);
         } */
 
     }
@@ -75,6 +77,7 @@ let StyledBlogPost = styled.div`
             //compensate the postnav width constraint;
             padding: 30px;
             width: 100%;
+
             .post-nav {
                 flex-wrap: wrap;
                 height: 60px;

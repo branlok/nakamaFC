@@ -1,9 +1,10 @@
 import { a, config, useSpring } from '@react-spring/web';
 import React, { useEffect, useRef, useState } from 'react'
+import Image from 'next/image';
 import StyledPresentationImage from './styled'
 import TimeAgo from 'react-timeago'
 
-function FullScreenPostCover({ coverImage, title, createdOn }: { coverImage: string, title: string, createdOn: any }) {
+function FullScreenPostCover({ blurHash, coverImage, title, createdOn }: { blurHash: string, coverImage: string, title: string, createdOn: any }) {
     let [spring, api] = useSpring(() => {
         return {
             from: {
@@ -14,20 +15,35 @@ function FullScreenPostCover({ coverImage, title, createdOn }: { coverImage: str
                 opacity: 1,
                 translateY: 0
             },
-            delay: 500,
             config: config.molasses
         }
     })
+
+    const [windowDimensions, setWindowDimensions] = useState<any>({
+        width: undefined,
+        height: undefined,
+    });
+
+    useEffect(() => {
+        function handleResize(): void {
+            setWindowDimensions({
+                width: window.innerWidth,
+                height: window.innerHeight,
+            });
+        }
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return (): void => window.removeEventListener('resize', handleResize);
+    }, []); // Empty array ensures that effect is only run on mount
+
+
     return (
         <StyledPresentationImage >
-            <img src={coverImage} />
+            <Image alt='' placeholder='blur' blurDataURL={blurHash} width={windowDimensions.width ?? 0} height={windowDimensions.height ?? 0} src={coverImage} />
             <div className="filter">
                 <a.h1 style={spring} >{title}</a.h1>
                 <TimeAgo className='time' date={createdOn} />
-                {/* <div>
-                    <a.button style={spring}>Read Here</a.button>
-                </div> */}
-                <span>or scroll down</span>
+                <span>Scroll down</span>
             </div>
         </StyledPresentationImage>
     )

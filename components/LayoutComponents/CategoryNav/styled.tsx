@@ -14,20 +14,11 @@ export let StyledItem = styled(Link)<{selected: boolean}>`
     margin: 10px;
     background-color: ${props => props.selected ? 'white' : 'transparent'};
     color: ${props => props.selected ? 'black' : 'white'};
+  
     :hover {
       background-color: white;
       color: black;
     }
-    /* :before {
-      content: '';
-      position: absolute;
-      left: 3px;
-      top: 1;
-      width: 5px;
-      height: calc(100% - 10px);
-      background-color: white;
-      border-radius: 5px;
-    } */
 `
 let StyledCategoryNav = styled.nav`
   display: flex;
@@ -35,6 +26,7 @@ let StyledCategoryNav = styled.nav`
   margin: 5px;
   flex-wrap: wrap;
     width: 100%;
+    
   div:first-child {
     /* border-left: 10px solid white; */
   }

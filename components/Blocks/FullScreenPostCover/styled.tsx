@@ -22,7 +22,6 @@ let StyledPresentationImage = styled.div`
    width: 100%;
    height: 100%;
    padding: 0px;
-
    flex-direction: column;
    position: relative;
    img {
@@ -49,11 +48,14 @@ let StyledPresentationImage = styled.div`
     color: white;
     padding: 0px;
     margin: 0px;
-    font-size: 4rem !important;
+    font-size:    ${props => props.theme.fontSize.xxxxl};
     font-family: ${IM.style.fontFamily};
     z-index: 5;
     padding-bottom: 30px;
     text-align: center;
+    @media (max-width: 767.98px)  {
+        font-size: ${props => props.theme.fontSize.xxl};
+    }
    }
    .time {
     color: white;

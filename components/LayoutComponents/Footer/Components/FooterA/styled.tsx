@@ -9,7 +9,10 @@ align-items: flex-start;
 justify-content: flex-start;
 /* flex-direction: column; */
 overflow: hidden;
-
+padding: 0px 8%;
+@media (max-width: 575.98px) { 
+    padding: 0px;
+    }
 .brand {
     font-size: ${props => props.theme.fontSize.xl};
     /* border-right: 3px solid rgba(255,255,255,0.2); */
@@ -55,13 +58,13 @@ overflow: hidden;
         text-decoration:none ;
         color: white;
         width: 100%;
-        border: 1px solid rgba(255,255,255,0.1);
-        border-radius: 5px;
+        border: 3px solid rgba(255,255,255,0.1);
+        border-radius: 50px;
         padding: 5px;
         margin-bottom: 5px;
         text-align: center;
         width: 140px;
-        background-color: ${props => props.theme.colors['primary-contrast']};
+        background-color: ${props => props.theme.colors['primary']};
         :hover {
             background-color: white;
             color: black;

@@ -6,17 +6,16 @@ const myFont = localFont({ src: '../../../utils/HandjetFlowerDouble-Medium.woff2
 
 
 let StyledFooter = styled.div`
-    /* background-color: rgba(0,0,0,0.5); */
-    background-color:#190934;
     display: flex;
     flex-direction: column;
     min-height: 230px;
     width: 100%;
     color: white;
-
+    background-color: rgba(255,255,255,0.01);
     border-top: 5px solid rgba(255,255,255,0.2);
     overflow: hidden;
     position: relative;
+  
     h1 {
         font-family: ${myFont.style.fontFamily};
     }
@@ -25,8 +24,9 @@ let StyledFooter = styled.div`
         height: 100%;
         width: 100%;
         padding: 15px;
+        background-position: center center;
         background: url('/anchor50.png');
-        background-size: 30%;
+        background-size: 55%;
         background-repeat: repeat;
         > div {
             width: 100% !important;

@@ -1,5 +1,5 @@
 import { GetStaticPropsContext } from 'next/types'
-import React from 'react'
+import React, { useEffect } from 'react'
 import FeaturePost from '../../components/Blocks/FeaturePost'
 import BlogLayout from '../../components/LayoutComponents/BlogLayout'
 import FooterLayout from '../../components/LayoutComponents/Footer'
@@ -9,6 +9,7 @@ import Nav from '../../components/nav'
 import getPrebuiltCategories from '../../prebuildResources/prebuildScripts/getPrebuiltCategories'
 import getPrebuiltBlogPosts from '../../prebuildResources/prebuildScripts/getPrebuiltBlogPosts'
 import CategoryNav from '../../components/LayoutComponents/CategoryNav'
+import Loader from '../../components/Blocks/Loader'
 
 
 
@@ -19,13 +20,18 @@ function Blog({ apiPackage, postList, categories }: any) {
         return <FeaturePost key={index} data={item} />
     })
 
-
+    useEffect(() => {
+        globalThis.document.body.scrollTo(0, 0);
+    }, [])
+    // return 
     return (
-        <div className='main-content'>
+        <>
             <Nav subPath={'Blog'} blogCategories={categories} />
-            <BlogLayout categoryNav={<CategoryNav categories={categories} />} secondaryColumnData={postList} mainPosts={[...items, <FooterLayout key={'footer'} primaryBlock={<FooterA blogLinks={categories} />} secondaryBlock={<FooterLinks />} />]}>
-            </BlogLayout>
-        </div>
+            <main>
+                <BlogLayout categoryNav={<CategoryNav categories={categories} />} secondaryColumnData={postList} mainPosts={[...items, <FooterLayout key={'footer'} primaryBlock={<FooterA blogLinks={categories} />} secondaryBlock={<FooterLinks />} />]}>
+                </BlogLayout>
+            </main>
+        </>
     )
 }
 

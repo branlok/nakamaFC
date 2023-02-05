@@ -9,11 +9,9 @@ let StyledTab = styled.div`
     font-size: ${(props) => props.theme.fontSize.base};
     width: 100%;
     border-radius: 2px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+
     transition: 0.2s;
-    cursor: pointer;
-    
+
     a {
         display: inline-block;
         display: flex;
@@ -21,6 +19,10 @@ let StyledTab = styled.div`
         text-decoration: none ;
         color: white;
         text-align: center;
+        height: 100%;
+        padding-top: 10px;
+    padding-bottom: 10px;
+    z-index: 10;
     }
     :hover {
         color: ${props => props.theme.fontColors.primary};

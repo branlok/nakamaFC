@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import PostNav from '../../../../components/Blocks/FeaturePost/PostNav'
 import FullScreenPostCover from '../../../../components/Blocks/FullScreenPostCover'
 import GeneralTextBlock from '../../../../components/Blocks/GeneralTextBlock'
@@ -9,19 +9,27 @@ import FooterA from '../../../../components/LayoutComponents/Footer/Components/F
 import FooterLinks from '../../../../components/LayoutComponents/Footer/Components/FooterLinks'
 import PostLayout from '../../../../components/LayoutComponents/PostLayout'
 import Nav from '../../../../components/nav'
+import Poll from '../../../../components/Widgets/Poll/Poll'
 import getPrebuiltCategories from '../../../../prebuildResources/prebuildScripts/getPrebuiltCategories'
 import getPrebuiltSpecificPost from '../../../../prebuildResources/prebuildScripts/getPrebuiltSpecificPost'
 import client from '../../../../utils/sanityAPI'
 
 
 function Post({ apiPackage, categories }: any) {
-    let { author, blogCategories, blogpostImage, content, tags, title,createdOn } = getBlogPostData(apiPackage);
+    let { author, blogCategories, blogpostImage, content, tags, title, createdOn } = getBlogPostData(apiPackage);
+
+
+    useEffect(() => {
+        globalThis.document.body.scrollTo(0, 0);
+    }, [])
 
     return (
-        <div>
+        <>
             <Nav subPath={'Blog'} blogCategories={categories} />
-            <PostLayout heading={title} head={<FullScreenPostCover createdOn={createdOn}  coverImage={blogpostImage} title={title} />} body={[<PostNav disable3d={true} key={'postnav'} author={apiPackage.author.name} role={apiPackage.author.role} blogCategories={apiPackage.blogCategories} />, <GeneralTextBlock key={'GeneralTextBlock'} config={{ color: '#ddddea' }} data={apiPackage.content} extensibleFooter={null} />]} footer={<FooterLayout key={'footer'} primaryBlock={<FooterA />} secondaryBlock={<FooterLinks />} />} />
-        </div>
+            <main>
+                <PostLayout heading={title} head={<FullScreenPostCover blurHash={apiPackage.blogpostImage.lqip} createdOn={createdOn} coverImage={blogpostImage} title={title} />} body={[<PostNav disable3d={true} key={'postnav'} author={apiPackage.author.name} role={apiPackage.author.role} blogCategories={apiPackage.blogCategories} />, <GeneralTextBlock key={'GeneralTextBlock'} config={{ color: '#ddddea' }} data={apiPackage.content} extensibleFooter={null} />, apiPackage.interactives ? <Poll key='poll' question={apiPackage.interactives} /> : null]} footer={<FooterLayout key={'footer'} primaryBlock={<FooterA blogLinks={categories} />} secondaryBlock={<FooterLinks />} />} />
+            </main>
+        </>
     )
 }
 

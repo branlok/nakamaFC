@@ -54,8 +54,6 @@ export let StyledHeaderWrapper = styled(a.div)`
     background-color: ${props => props.theme.colors['primary']};
     position: relative;
     z-index: 2;
-    /* border: 20px solid #7a0907d0; */
-    /* border-radius: 50px 50px 50px 50px; */
     :after {
         content: "";
         position: absolute;
@@ -65,7 +63,7 @@ export let StyledHeaderWrapper = styled(a.div)`
         background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
         /* background-image: linear-gradient(to right top, #0f0843, #261160, #3f177d, #5c1c9a, #7c1eb6); */
         background-color: #000000;
-        opacity: 0.28;
+        opacity: 0.38;
         z-index: -1;
         pointer-events: none;
         transition: 2s;
@@ -125,6 +123,38 @@ let StyledHeader = styled(a.div)`
     padding: 90px;
     background: transparent; 
     box-shadow: inset 0 0px 200px 20px #000000;
+    .photo-left {
+        position: absolute;
+        bottom: -10px;
+        left: -10px;
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        border: 10px solid white;
+        transform: rotate(12deg);
+        box-shadow: 0 5px 28px rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.22);
+        animation:${fadeIn} 2.5s ease forwards;
+    }
+    .photo-right {
+        position: absolute;
+        top: -30px;
+        right: -30px;
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        border: 10px solid white;
+        transform: rotate(-12deg);
+        box-shadow: 0 5px 28px rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.22);
+        animation:${fadeIn} 2.5s ease forwards;
+
+    }
+    .photo {
+        @media (max-width: 767.98px) { 
+            width: 150px;
+        height: 150px;
+        border: 5px solid white;
+        }
+    }
     .rope {
         position: fixed;
         width: 1000px;
@@ -143,7 +173,7 @@ let StyledHeader = styled(a.div)`
         margin: 10px;
         animation:${fadeIn} 2.5s ease forwards;
         opacity:0;
-        animation-delay: 2.7s;
+        animation-delay: 2s;
         @media (max-width: 1399.98px) { 
             font-size: 6rem;
         }

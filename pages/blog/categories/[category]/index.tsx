@@ -1,6 +1,4 @@
-import { GetStaticProps } from 'next'
-import React from 'react'
-import CenteredPost from '../../../../components/Blocks/CenteredPost'
+import React, { useEffect } from 'react'
 import FeaturePost from '../../../../components/Blocks/FeaturePost'
 import NoPost from '../../../../components/Blocks/NoPost'
 import BlogLayout from '../../../../components/LayoutComponents/BlogLayout'
@@ -24,12 +22,17 @@ function Post({ apiPackage, postList, category, categories }: any) {
     if (items.length === 0) {
         items.push(<NoPost />)
     }
+    useEffect(() => {
+        globalThis.document.body.scrollTo(0, 0);
+    }, [])
 
     return (
-        <div>
+        <>
             <Nav subPath={`${category}`} blogCategories={categories} />
-            <BlogLayout categoryNav={<CategoryNav categories={categories} />} secondaryColumnData={postList} mainPosts={[...items, <FooterLayout key={'footer'} primaryBlock={<FooterA  blogLinks={categories}/>} secondaryBlock={<FooterLinks />} />]} />
-        </div>
+            <main>
+                <BlogLayout categoryNav={<CategoryNav categories={categories} />} secondaryColumnData={postList} mainPosts={[...items, <FooterLayout key={'footer'} primaryBlock={<FooterA blogLinks={categories} />} secondaryBlock={<FooterLinks />} />]} />
+            </main>
+        </>
     )
 }
 
@@ -49,12 +52,10 @@ export async function getStaticPaths() {
             }
         })
     })
-
     return {
         paths: apiRequest,
         fallback: false
     }
-
 }
 
 export async function getStaticProps(paths: any) {

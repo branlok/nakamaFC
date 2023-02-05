@@ -1,11 +1,11 @@
 import Link from "next/link";
 import StyledTab from "./styled";
 
-export default function Navigator({ belongTo, name }: { name: string, belongTo: any }) {
-    let url = belongTo === 'categories' ? `/blog/categories/${name}` : `/${belongTo}`
+export default function Navigator({ name, path }: { name: string, path: string }) {
+    // let url = belongTo === 'categories' ? `/blog/categories/${name}` : `/${belongTo}`
     return (
         <StyledTab>
-            <Link href={url}>{name}</Link>
+            <Link href={`\/${path}`}>{name}</Link>
         </StyledTab>
     )
 }

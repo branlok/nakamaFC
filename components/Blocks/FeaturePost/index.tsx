@@ -6,6 +6,9 @@ import parseAssetId from '../../../utils/composeUrl';
 import PostNav from './PostNav';
 import StyledFeatureBlock from './styled'
 import TimeAgo from 'react-timeago'
+import Link from 'next/link';
+import ExternalLink from '../../assets/externalLink';
+
 type Props = { author: string, title: string, content: string, createdOn: string, tags: string[], coverImage: string }
 
 function FeaturePost({ data }: any) {
@@ -19,6 +22,7 @@ function FeaturePost({ data }: any) {
     let [recentlyResized, setRecentlyResized] = useState<boolean | number>(false);
 
     let newblogpostImage = typeof blogpostImage === 'string' ? blogpostImage : blogpostImage.blogpostImage;
+
     const [dimensions, setDimensions] = useState({
         width: !!globalThis ? globalThis.innerWidth : 0,
         height: !!globalThis ? globalThis.innerHeight : 0,
@@ -32,6 +36,7 @@ function FeaturePost({ data }: any) {
             }
         }
     }, [contentHeight, imageHeight, openViewer, dimensions])
+
     const handleResize = () => {
         setDimensions({
             width: window.innerWidth,
@@ -39,6 +44,7 @@ function FeaturePost({ data }: any) {
         });
         setRecentlyResized(Math.random());
     }
+
 
     React.useEffect(() => {
         window.addEventListener("resize", handleResize, false);
@@ -57,9 +63,14 @@ function FeaturePost({ data }: any) {
         }
     }, [data, dimensions]);
 
+
+
+
+
+
     const myPortableTextComponents = {
         types: {
-            image: ({ value }: any) => <img src={parseAssetId(value.asset._ref)} />,
+            image: ({ value }: any) => <Image placeholder='blur' blurDataURL={value.asset.lqip} width={500} height={500 / value.asset.aspectRatio} src={parseAssetId(value.asset._ref)} alt={''} />,
         }
     }
 
@@ -74,9 +85,12 @@ function FeaturePost({ data }: any) {
                         <h1>
                             {title}
                         </h1>
-                        <h2 className='date-slot'>
-                            <TimeAgo date={data.createdOn} />
-                        </h2>
+                        <div className="date-slot">
+                            <h2>
+                                <TimeAgo date={data.createdOn} />
+                            </h2>
+                            {<Link className='external-link' scroll={true} href={`/blog/posts/${slug}`}>Open <ExternalLink /></Link>}
+                        </div>
                         <div className="preview-box" ref={ref}>
                             <PortableText value={content} components={myPortableTextComponents} />
                         </div>
@@ -85,14 +99,14 @@ function FeaturePost({ data }: any) {
                         </div>
                     </div>
                     <div className="right">
-                        <Image alt='' width="800" height="600" ref={imageRef} src={newblogpostImage}>
+                        <Image placeholder='blur' blurDataURL={blogpostImage.lqip} alt='' width={600} height={400} priority={true} ref={imageRef} src={newblogpostImage}>
                         </Image>
                     </div>
                 </a.div>
                 <>
                     <div className="blur-filter"></div>
                     {/* <img  src={newblogpostImage}> */}
-                    <Image alt='' className='bg-image' width="800" height="600" ref={imageRef} src={newblogpostImage}>
+                    <Image placeholder='blur' blurDataURL={blogpostImage.lqip} alt='' className='bg-image' width="600" priority={true} height="400" ref={imageRef} src={newblogpostImage}>
                     </Image>
                     {/* </img> */}
                 </>

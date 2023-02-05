@@ -1,7 +1,4 @@
 import React, { useEffect } from 'react'
-import CenteredPost from '../../Blocks/CenteredPost'
-import FullScreenPostCover from '../../Blocks/FullScreenPostCover';
-import { getBlogPostData } from '../../helpers/getBlogPostData';
 import WaveCap from '../../TransitionalComponents/Wave';
 import StyledBlogPost from './styled';
 

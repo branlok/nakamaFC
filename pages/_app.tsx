@@ -13,7 +13,9 @@ const IM = IM_Fell_Double_Pica({
 const myFont = localFont({ src: '../utils/HandjetFlowerDouble-Medium.woff2', display: 'swap' })
 
 const GlobalStyle = createGlobalStyle`
-
+  ::selection {
+    background: orange;
+  }
   body, html, main {
     margin: 0;
     padding: 0;
@@ -25,11 +27,15 @@ const GlobalStyle = createGlobalStyle`
     position: relative;
     overflow-x: hidden;
     background-color: #0A0E1B;
-    
-    
+  }
+  main {
+    overflow: hidden;
   }
   h1, h2, p {
     font-family: ${IM.style.fontFamily};
+    -webkit-font-smoothing: antialiased;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
   }
   
   body {

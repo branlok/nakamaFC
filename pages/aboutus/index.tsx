@@ -25,7 +25,9 @@ export async function getStaticProps() {
           content,
         images[] {
           'imageData': asset-> {
-            url
+            url,
+            'blurhash': metadata.lqip,
+            'aspectRatio': metadata.dimensions.aspectRatio
           }
         }
   

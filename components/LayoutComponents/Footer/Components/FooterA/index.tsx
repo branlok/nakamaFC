@@ -16,7 +16,6 @@ function index({ blogLinks = null, aboutUsLinks = [] }: any) {
         <div className="link-wrapper">
           <h1>Blog</h1>
           {blogLinks && blogLinks.map((item: any) => <Link key={item.blogCategoryName} href={`/blog/categories/${item.blogCategoryName}`}>{item.blogCategoryName}</Link>)}
-          {/* {blogLinks.map((link: any) => <Link key={link} href={`/blog/categories/${link}`}>{link}</Link>)} */}
         </div>
         <div className="link-wrapper">
           <h1>About Us</h1>

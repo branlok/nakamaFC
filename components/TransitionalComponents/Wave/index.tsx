@@ -16,7 +16,7 @@ type Props = {
 function WaveCap({ heading, intersectPosition = 'top', height = 50, overrideIntialVisibility = false, configuration = { titleSize: 'lg' } }: Props) {
 
 
-    let [visible, setVisible] = useState(overrideIntialVisibility);
+    let [visible, setVisible] = useState<boolean>(overrideIntialVisibility);
 
     let intersectRef = useRef(null);
 
@@ -27,7 +27,7 @@ function WaveCap({ heading, intersectPosition = 'top', height = 50, overrideInti
         })
         observer.observe(intersectRef.current as any);
     }, [])
-    
+
     //configurables
     let intersectables: {
         top: string,
@@ -76,7 +76,7 @@ function WaveCap({ heading, intersectPosition = 'top', height = 50, overrideInti
 
 
     return (
-        <StyledAnimatedCap textSize={configuration.titleSize} style={spring2} show={visible} top={intersectables[intersectPosition]} className="svg-wrapper">
+        <StyledAnimatedCap textSize={configuration.titleSize} style={spring2} revealing={visible} top={intersectables[intersectPosition]} className="svg-wrapper">
             <StyledAnimatedSvg style={spring} preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 1031.842 42.5"
                 width="1em"

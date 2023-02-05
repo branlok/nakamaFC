@@ -17,18 +17,16 @@ import getPrebuiltCategories from '../prebuildResources/prebuildScripts/getPrebu
 
 
 export default function Home({ apiPackage, categories }: { apiPackage: any, categories: any }) {
-  console.log(apiPackage)
   let ComponentBuilder = (resource: any) => {
     let ComponentBuilder = resource.map((item: any, i: number) => {
       switch (item._type) {
         case 'cover':
-          return <LandingCover key={i} title={item.heading} tagline={item.tagline} image={item.landingImage.asset._ref} />;
+          return <LandingCover key={i} blurHash1={item.photo1.asset.lqip} blurHash2={item.photo2.asset.lqip} photo1={parseAssetId(item.photo1.asset._ref)} photo2={parseAssetId(item.photo2.asset._ref)} title={item.heading} tagline={item.tagline} image={item.landingImage.asset._ref} />;
           break;
         case 'landingHook':
           return <HookBlock key={i} hookContent={item.hookContent} hookHeading={item.hookHeading} wavesIncluded={item.transitionWaves} />;
           break;
         case 'imagePresentation':
-          // return null;
           return <ImageBlock key={i} url={parseAssetId(item.landingSectionImage.asset._ref)} alt={item.alt} />;
           break;
         case 'landingParagraph':
@@ -40,7 +38,7 @@ export default function Home({ apiPackage, categories }: { apiPackage: any, cate
     return ComponentBuilder
   }
 
-  let x = ComponentBuilder(apiPackage);
+  let populatedLayout = ComponentBuilder(apiPackage);
 
   return (
     <>
@@ -54,12 +52,10 @@ export default function Home({ apiPackage, categories }: { apiPackage: any, cate
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
-        {/* <link rel="icon" href="/favicon.ico" /> */}
-
       </Head>
+      <Nav blogCategories={categories} />
       <main>
-        <Nav blogCategories={categories} />
-        {x}
+        {populatedLayout}
         <FooterLayout primaryBlock={<FooterA blogLinks={categories} />} secondaryBlock={<FooterLinks />} />
       </main>
     </>
@@ -68,7 +64,33 @@ export default function Home({ apiPackage, categories }: { apiPackage: any, cate
 
 export async function getStaticProps(context: GetStaticPropsContext) {
 
-  const query = '*[_type == "homePage" && !(_id in path("drafts.**"))][0]';
+  const query = `
+  *[_type == "homePage" && !(_id in path("drafts.**"))][0] {
+      "pageBuilder": pageBuilder[] {
+      ...,
+        ...select(
+          _type == "cover" => {
+            ...,
+              "photo1": photo1.asset->{
+                'asset': {
+                  '_ref': _id,
+                  'lqip': metadata.lqip,
+                  'aspectRatio': metadata.dimensions.aspectRatio
+                }
+              },
+              "photo2": photo2.asset->{
+                'asset': {
+                  '_ref': _id,
+                  'lqip': metadata.lqip,
+                  'aspectRatio': metadata.dimensions.aspectRatio
+                  
+                }
+              }
+          }  
+          
+        )
+      },
+  }`
   let apiRequest = await client.fetch(query).then((data: any) => {
     return data.pageBuilder;
   }).then((r: any) => {
