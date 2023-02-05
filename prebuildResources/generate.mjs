@@ -158,10 +158,12 @@ let featuredImageAssets = await client
       console.log("JSON written to file. Contents:");
       console.log(fs.readFileSync("tags.json", "utf-8"));
     });
-    return json.find((item) => (item.name = "Featured Images"));
+    console.log(json, 'nani');
+    return json.find((item) => (item.name === "Featured Images"));
   })
   .then((r) => {
     //Capture all Featured Images
+    console.log(r);
     const QUERYSTRING = `
     {
       "items": *[
@@ -180,7 +182,6 @@ _type in ["sanity.fileAsset","sanity.imageAsset"] && !(_id in path("drafts.**"))
       } | order(_createdAt desc) [0...50],
     }
 `;
-    console.log(QUERYSTRING);
 
     return client
       .fetch(QUERYSTRING)
@@ -238,7 +239,7 @@ async function findImagesByTag(tagName) {
     } | order(_createdAt desc) [0...50],
   }
   `;
-  console.log(r, "eeeeeee");
+
 
   return client
     .fetch(QUERYSTRING)
