@@ -29,14 +29,13 @@ function GalleryHeader({ data }: any) {
                         Gallery
                     </h1>
                     <div className='content'>
-                        The gallery is a place for our communtiy to post iamges freely. Selfexpression..
+                        A gallery from our community!
                     </div>
                     <div className='cta-wrapper'>
                         <label>Control</label>
                         <div className='cta'>
                             <button onClick={() => setIndex(prev => --prev)}>Prev</button>
                             <button onClick={() => setIndex(prev => ++prev)}>Next</button>
-
                         </div>
                     </div>
                 </div>

@@ -12,7 +12,8 @@ let StyledLink = styled.div<{ hovered: boolean }>`
     svg {
         display: flex;
         fill : white;
-        margin-right: 5px;
+        margin: 1px;
+        margin-bottom: 3px;
     }
     
     a {

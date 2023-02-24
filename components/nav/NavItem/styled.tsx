@@ -69,6 +69,7 @@ let StyledNavItem = styled.div`
         flex-direction: column;
         align-items: center;
         border-radius: 2px;    
+        
     }
     
     .title {
@@ -79,6 +80,7 @@ let StyledNavItem = styled.div`
         font-size: ${props => props.theme.fontSize.base};
     }
     }
+    
 `
 
 export default StyledNavItem;

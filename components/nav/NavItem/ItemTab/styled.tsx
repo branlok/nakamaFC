@@ -5,7 +5,7 @@ let StyledTab = styled.div`
     margin-top: 2px;
     margin-bottom: 2px;
     background-color: ${props => props.theme.colors['background']};
-    border: 1px solid rgba(0,0,0,0.4);
+    /* border: 1px solid rgba(0,0,0,0.4); */
     font-size: ${(props) => props.theme.fontSize.base};
     width: 100%;
     border-radius: 2px;

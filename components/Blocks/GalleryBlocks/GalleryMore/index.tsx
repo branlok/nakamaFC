@@ -35,10 +35,10 @@ function GalleryMore({ data }: any) {
             <div className='observable' ref={intersectRef}></div>
             <div className="wrapper">
                 <div className='title'>
-                    <h1>Captured in Janurary!</h1>
+                    <h1>Captured in Feburary!</h1>
                     <nav>
                         <ul>
-                            <li>Janurary</li>
+                            <li>Feburary</li>
                         </ul>
                     </nav>
                 </div>
